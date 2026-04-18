@@ -1,2 +1,4 @@
 # CompositeLayers
-Composte Laminate Layer Modeling in Elmer
+Composte Laminate Layer Modeling in Elmer  
+![NAFEMS Benchmark](problem.png)   
+
