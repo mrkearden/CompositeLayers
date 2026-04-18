@@ -1,0 +1,42 @@
+!------ Skeleton for body section -----
+Body 1
+  Name = Layer1
+End
+
+Body 2
+  Name = Layer4
+End
+
+Body 3
+  Name = Layer2
+End
+
+Body 4
+  Name = Layer3
+End
+
+Body 5
+  Name = Layer7
+End
+
+Body 6
+  Name = Layer6
+End
+
+Body 7
+  Name = Layer5
+End
+
+!------ Skeleton for boundary section -----
+Boundary Condition 1
+  Name = sup1
+End
+
+Boundary Condition 2
+  Name = sup2
+End
+
+Boundary Condition 3
+  Name = load
+End
+

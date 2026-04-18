@@ -1,0 +1,12 @@
+! ----- names for bodies -----
+$ Layer1 = 1
+$ Layer4 = 2
+$ Layer2 = 3
+$ Layer3 = 4
+$ Layer7 = 5
+$ Layer6 = 6
+$ Layer5 = 7
+! ----- names for boundaries -----
+$ sup1 = 1
+$ sup2 = 2
+$ load = 3
