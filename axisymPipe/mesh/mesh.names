@@ -1,0 +1,7 @@
+! ----- names for bodies -----
+$ cyl = 1
+! ----- names for boundaries -----
+$ bot = 1
+$ outer = 2
+$ top = 3
+$ inner = 4
