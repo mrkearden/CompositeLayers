@@ -12180,7 +12180,7 @@ Hash: SydmOSQI, Date: 04/18/2026, Unit system: UNIT_LESS
 ** Step-1 ++++++++++++++++++++++++++++++++++++++++++++++++++
 **
 *Step
-*Static, Solver=Pardiso
+*Static, Solver=spooles
 **
 ** Controls ++++++++++++++++++++++++++++++++++++++++++++++++
 **
@@ -12201,7 +12201,7 @@ Group_2, 2, 2, 0
 Group_2, 3, 3, 0
 ** Name: Displacement_Rotation-3
 *Boundary
-Group_3, 1, 1, 0
+Group_3, 1, 2, 0
 **
 ** Loads +++++++++++++++++++++++++++++++++++++++++++++++++++
 **
