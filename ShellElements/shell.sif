@@ -1,0 +1,101 @@
+Header
+  CHECK KEYWORDS Warn
+  Mesh DB "." "mesh"
+  Include Path ""
+  Results Directory "res"
+End
+
+Simulation
+  Max Output Level = 5
+
+  Coordinate System = Cartesian
+  Coordinate Mapping(3) = 1 2 3
+  Simulation Type = Steady state
+  Steady State Max Iterations = 1
+  Output Intervals(1) = 1
+  Solver Input File = case.sif
+post file = shell.vtu
+!coordinate scaling = 0.001
+End
+
+Constants
+  Gravity(4) = 0 0 -1 1
+  Stefan Boltzmann = 5.670374419e-08
+  Permittivity of Vacuum = 8.85418781e-12
+  Permeability of Vacuum = 1.25663706e-6
+  Boltzmann Constant = 1.380649e-23
+  Unit Charge = 1.6021766e-19
+End
+
+Body 1
+  Target Bodies(1) = 1 
+  Name = "Body 1"
+  Equation = 1
+material = 1
+  Body Force = 1
+End
+
+Body Force 1 
+  Normal Pressure = Real 0.0
+End
+
+Solver 1
+!Element="p:2"
+  Equation = Shell Solver
+!  Procedure = "ShellSolver" "ShellSolver"
+  Procedure = "ShellLayerSolver" "ShellSolver"
+  Exec Solver = Always
+  Stabilize = True
+  Optimize Bandwidth = True
+  Steady State Convergence Tolerance = 1.0e-5
+  Nonlinear System Convergence Tolerance = 1.0e-7
+  Nonlinear System Max Iterations = 1
+  Nonlinear System Newton After Iterations = 3
+  Nonlinear System Newton After Tolerance = 1.0e-3
+  Nonlinear System Relaxation Factor = 1
+  Linear System Solver = Direct
+  Linear System Direct Method = MUMPS
+Displace Mesh = False
+End
+
+Equation 1
+  Name = "Equation 1"
+  Active Solvers(1) = 1 
+End
+
+Material 1
+Name="0"
+Density = 0.0
+Poisson Ratio = 0.40
+Youngs Modulus = 66361
+Shell Thickness = 1.0
+End
+
+Boundary Condition 1
+Target Boundaries(1) = 1
+
+U 2 = 0
+U 3 = 0
+End
+
+Boundary Condition 2
+Target Boundaries(1) = 2
+
+U 2 = 0
+U 3 = 0
+End
+
+Boundary Condition 3
+Target Boundaries(1) = 3
+Name="load"
+U 1 = 0
+  Resultant Force 3 = Real -10
+End
+
+
+
+
+
+
+
+
