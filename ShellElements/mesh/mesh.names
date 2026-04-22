@@ -1,0 +1,6 @@
+! ----- names for bodies -----
+$ Group = 1
+! ----- names for boundaries -----
+$ sup1 = 1
+$ sup2 = 2
+$ Group_1 = 3
