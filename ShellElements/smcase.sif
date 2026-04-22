@@ -1,0 +1,88 @@
+Header
+  CHECK KEYWORDS Warn
+  Mesh DB "." "tria"
+  Include Path ""
+  Results Directory "res"
+End
+
+Constants
+End
+
+Simulation
+  Max Output Level = 5
+  Coordinate System = Cartesian
+  Simulation Type = Steady State
+  Steady State Max Iterations = 1
+  Output Intervals = 1
+  Post File = "multi.vtu"
+End
+
+Body 1
+  Target Bodies(1) = 1
+  Name = "Body Property 1"
+  Equation = 1
+  Material = 1
+  Body Force = 1
+End
+
+Material 1
+Name="0"
+Density = 0.0
+Poisson Ratio = 0.40
+Youngs Modulus = 0.66331E+05
+Thickness = 1.0
+End
+
+Body Force 1
+  Name = "BodyForce 1"
+   Thickness = Real 1.0
+End
+
+Solver 1
+  Equation = Shell Solver
+  Procedure = "ShellMultiSolver" "ShellSolver"
+  Linear System Solver = Direct
+  Linear System Direct Method = MUMPS
+!  Linear System Max Iterations = 10000
+!  Linear System Iterative Method = BiCGStab
+!  Linear System Preconditioning = ILU0
+  Linear System Convergence Tolerance = 1.0e-10
+  Nonlinear System Newton After Tolerance = 1.0e-8
+  Nonlinear System Newton After Iterations = 20
+  Nonlinear System Max Iterations = 1
+  Nonlinear System Convergence Tolerance = 1.0e-8
+  Nonlinear System Relaxation Factor = 1.0
+  Steady State Convergence Tolerance = 1.0e-8
+
+  Shear Stabilization Parameter = Real 0.0
+  Drilling Stabilization Parameter = Real 1.0
+  Calculate Stresses = Logical TRUE
+  !Compute Membrane Stress = Logical TRUE
+  !Compute Bending Stress = Logical TRUE
+  Compute Total Stress = Logical TRUE
+
+  Membrane Only = Logical FALSE
+  Use DKT Triangle = Logical FALSE
+  Use RMITC3 Element = Logical TRUE
+  Use SMITC Element = Logical FALSE
+  Use MITC3 Element = Logical FALSE
+  Integration Points = Integer 3
+End
+
+Equation 1
+  Active Solvers(1) = 1
+End
+
+Boundary Condition 1
+Target Boundaries(1) = 1
+
+Deflection 2 = 0
+Deflection 3 = 0
+End
+
+Boundary Condition 3
+Target Boundaries(1) = 2
+Name="load"
+Deflection 1 = 0
+  Force 3 = Real -10
+End
