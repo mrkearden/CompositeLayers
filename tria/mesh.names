@@ -1,0 +1,5 @@
+! ----- names for bodies -----
+$ body = 1
+! ----- names for boundaries -----
+$ sup = 1
+$ load = 2

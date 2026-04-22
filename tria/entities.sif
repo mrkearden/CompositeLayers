@@ -1,0 +1,14 @@
+!------ Skeleton for body section -----
+Body 1
+  Name = body
+End
+
+!------ Skeleton for boundary section -----
+Boundary Condition 1
+  Name = sup
+End
+
+Boundary Condition 2
+  Name = load
+End
+
